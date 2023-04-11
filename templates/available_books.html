@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Root</title>
+</head>
+<body>
+{% for book in available_books %}
+    <ul>
+    <li>Title : {{ book.title }}</li>
+        <ul>
+            <li>Author : {{ book.author }}</li>
+            <li>Genre : {{ book.genre }}</li>
+            <li>Total Copies : {{ book.total_copies }}</li>
+            <li>Available Copies : {{ book.available_copies }}</li>
+        </ul>
+    </ul>
+{% endfor %}
+</body>
+</html>
