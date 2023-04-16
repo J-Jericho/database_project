@@ -17,6 +17,56 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   bottom: 0;
   height: inherit;
 }
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.product {
+  width: calc(33.33% - 10px);
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+
+.product h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.product .price {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.product .description {
+  margin-top: 10px;
+}
+
+.product button {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.product button:hover {
+  background-color: black;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -45,6 +95,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <a class="w3-bar-item w3-button w3-hover-black" href="#">Our Recommendations</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="databaseproject_checkout.html">Checkout</a>
   <a class="w3-bar-item w3-button w3-hover-black" href="databaseproject_bookreturn.html">Book Return</a>
+  <h4 class=""w3-bar-item"><b>&nbsp;&nbsp;&nbsp;&nbsp;Checkout List</b></h4>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -53,18 +104,19 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
 
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Book Display</h1>
-      <p></p>
-	<div class="book-grid">
-          <div class="book">
-            <img src="book2.jpg" alt="Book 2">
-            <h3>Book Title 2</h3>
-            <p>Author Name 2</p>
-            <p>Published: 2022</p>
-            <a href="#">More Info</a>
-      </div>
+<section>
+  <h2>Featured Products</h2>
+  <div class="product-grid">
+    <div class="product">
+      <img src="book1.jpg" alt="Product 1">
+      <h3>Product 1</h3>
+      <p class="price">$99.99</p>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam semper mauris vitae dolor sodales, sit amet interdum nisi pretium. Integer et est sed justo mollis gravida. Sed nec ultricies urna.</p>
+      <button>Add to Checkout</button>
+    </div>
+  </div>
+</section>
+
 
 <!-- END MAIN -->
 </div>
