@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Database Project - Catalogue</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <img src="BookLogo.png" alt="Library Logo">
+    <a href="databaseproject_mainpage.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
+    <a href="databaseproject_catalogue.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Book Catalogue</a>
+    <a href="databaseproject_contact.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About/Contact Us</a>
+    <a href="databaseproject_emplogin.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Faculty Login</a>
+    <a href="databaseproject_userlogin.html" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">User Login</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Book Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="databaseproject_catalogue.html">Book Catalogue</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">New Additions</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Our Recommendations</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="databaseproject_checkout.html">Checkout</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="databaseproject_bookreturn.html">Book Return</a>
+  <h4 class=""w3-bar-item"><b>&nbsp;&nbsp;&nbsp;&nbsp;Checkout List</b></h4>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Book Catalogue</h1>
+      <p>Welcome to our book catalogue, you use the side menu to search through different filters or just peruse the book catalogue to find your next read.</p>
+	<form>
+  	<label for="search">Search:</label>
+  	<input type="search" id="search" name="search">
+  	<button type="submit">Go</button>
+	</form>
+	<div class="book-grid">
+          <div class="book">
+            <img src="book1.jpg" alt="Book 1">
+            <h3>Book Title: [Insert data]</h3>
+            <p>Author Name: [Insert data]</p>
+            <p>Published: [Insert data]</p>
+            <button onclick="location.href='databaseproject_bookdisplay.html'">More Info</button>
+          </div>
+	    <div class="book">
+            <img src="book1.jpg" alt="Book 1">
+            <h3>Book Title: [Insert data]</h3>
+            <p>Author Name: [Insert data]</p>
+            <p>Published: [Insert data]</p>
+            <button onclick="location.href='databaseproject_bookdisplay.html'">More Info</button>
+          </div>
+	    <div class="book">
+            <img src="book1.jpg" alt="Book 1">
+            <h3>Book Title: [Insert data]</h3>
+            <p>Author Name: [Insert data]</p>
+            <p>Published: [Insert data]</p>
+            <button onclick="location.href='databaseproject_bookdisplay.html'">More Info</button>
+          </div>
+          <div class="book">
+            <img src="book1.jpg" alt="Book 1">
+            <h3>Book Title: [Insert data]</h3>
+            <p>Author Name: [Insert data]</p>
+            <p>Published: [Insert data]</p>
+            <button onclick="location.href='databaseproject_bookdisplay.html'">More Info</button>
+          </div>
+	    <div class="book">
+            <img src="book1.jpg" alt="Book 1">
+            <h3>Book Title: [Insert data]</h3>
+            <p>Author Name: [Insert data]</p>
+            <p>Published: [Insert data]</p>
+            <button onclick="location.href='databaseproject_bookdisplay.html'">More Info</button>
+          </div>
+	    <div class="book">
+            <img src="book1.jpg" alt="Book 1">
+            <h3>Book Title: [Insert data]</h3>
+            <p>Author Name: [Insert data]</p>
+            <p>Published: [Insert data]</p>
+            <button onclick="location.href='databaseproject_bookdisplay.html'">More Info</button>
+          </div>
+	    <div class="book">
+            <img src="book1.jpg" alt="Book 1">
+            <h3>Book Title: [Insert data]</h3>
+            <p>Author Name: [Insert data]</p>
+            <p>Published: [Insert data]</p>
+            <button onclick="location.href='databaseproject_bookdisplay.html'">More Info</button>
+          </div>
+          <div class="book">
+            <img src="book2.jpg" alt="Book 1">
+            <h3>Book Title: [Insert data]</h3>
+            <p>Author Name: [Insert data]</p>
+            <p>Published: [Insert data]</p>
+            <button onclick="location.href='databaseproject_bookdisplay.html'">More Info</button>
+      </div>
+
+<style>
+  .book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>
+
+<style>
+  .book {
+    width: calc(25% - 20px);
+    margin: 10px;
+    padding: 10px;
+  }
+</style>
+
+  <!-- Pagination -->
+<div class="pagination-container">
+  <div class="pagination">
+    <a class="page-link" href="#">«</a>
+    <a class="page-link" href="#">‹</a>
+    <a class="page-link active" href="#">1</a>
+    <a class="page-link" href="#">2</a>
+    <a class="page-link" href="#">3</a>
+    <a class="page-link" href="#">4</a>
+    <a class="page-link" href="#">5</a>
+    <a class="page-link" href="#">6</a>
+    <a class="page-link" href="#">7</a>
+    <a class="page-link" href="#">8</a>
+    <a class="page-link" href="#">9</a>
+    <a class="page-link" href="#">10</a>
+    <a class="page-link" href="#">›</a>
+    <a class="page-link" href="#">»</a>
+  </div>
+</div>
+
+<style>
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-link {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-right: 4px;
+  }
+
+  .page-link:hover {
+    background-color: #ccc;
+  }
+
+  .page-link.active {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .page-link.disabled {
+    pointer-events: none;
+    color: #999;
+    border-color: #999;
+  }
+</style>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
