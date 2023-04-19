@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.urls import re_path, include
 from django.contrib import admin
-from .views import available_books
+from base_app import views
 
 urlpatterns = [
-    re_path(r'^available/', available_books),
+    re_path(r'^available/', views.available_books, name='available'),
+    re_path(r'^home/', views.home, name='home'),
+    re_path(r'^catalogue/', views.catalogue, name='catalogue'),
+    re_path(r'^profile/', views.profile, name='profile'),
+    re_path(r'^checkout/(?P<book_id>[0-9]+)/$', views.checkout_book, name='checkout'),
+    re_path(r'^checkin/(?P<circulation_id>[0-9]+)/$', views.checkin_book, name='checkin'),
 ]

@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.urls import re_path, include
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
+from base_app import views
+
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
-    re_path(r'^books/', include('base_app.urls'))
-]
+    re_path(r'^books/', include('base_app.urls')),
+] + \
+              static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
