@@ -1,34 +1,32 @@
 {% extends "base_nav.html" %}
 {% load static %}
 {% block content %}
-    <div class="w3-main" style="margin-left:250px">
-        <div class="w3-row w3-padding-64">
-            <div class="w3-twothird w3-container">
-                <div class="w3-row">
-                    <div class="w3-twothird w3-container">
-                        <h1 class="w3-text-teal">Your Inventory</h1>
-                        <p>Here are the books you currently have checked out.</p>
-                        <div class="book-grid">
-                            {% for circulation in circulations %}
-                                <div class="book">
-                                    <img src="{{ circulation.book.image.url }}" alt="{{ circulation.book.title }}">
-                                    <h3>{{ circulation.book.title }}</h3>
-                                    <p>{{ circulation.book.author }}</p>
-                                    <p>Checked Out:</p>
-                                    <p>{{ circulation.checked_out }}</p>
-                                    <p>Due Date:</p>
-                                    <p>{{ circulation.due_date }}</p>
-                                    {% if circulation.is_overdue %}
+    <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+            <div class="w3-row">
+                <div class="w3-twothird w3-container">
+                    <h1 class="w3-text-teal">Your Inventory</h1>
+                    <p>Here are the books you currently have checked out.</p>
+                    <div class="book-grid">
+                        {% for circulation in circulations %}
+                            <div class="book">
+                                <img src="{{ circulation.book.image.url }}" alt="{{ circulation.book.title }}">
+                                <h3>{{ circulation.book.title }}</h3>
+                                <p>{{ circulation.book.author }}</p>
+                                <p>Checked Out:</p>
+                                <p>{{ circulation.checked_out }}</p>
+                                <p>Due Date:</p>
+                                <p>{{ circulation.due_date }}</p>
+                                {% if circulation.is_overdue %}
 
-                                        <p style="color: red"><b>Overdue</b></p>
-                                    {% else %}
-                                        <p style="color: green"><b>Not Overdue</b></p>
-                                    {% endif %}
-                                    <a href="{% url 'checkin' circulation.id %}">Return Book</a>
-{#                                    <a href="{% url 'book_display' book.id %}">More Info</a>#}
-                                </div>
-                            {% endfor %}
-                        </div>
+                                    <p style="color: red"><b>Overdue</b></p>
+                                {% else %}
+                                    <p style="color: green"><b>Not Overdue</b></p>
+                                {% endif %}
+                                <a href="{% url 'checkin' circulation.id %}">Return Book</a>
+                                {#                                    <a href="{% url 'book_display' book.id %}">More Info</a>#}
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

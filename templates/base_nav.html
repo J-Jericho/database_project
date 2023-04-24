@@ -15,14 +15,6 @@
             font-family: "Roboto", sans-serif;
         }
 
-        .w3-sidebar {
-            z-index: 3;
-            width: 250px;
-            top: 43px;
-            bottom: 0;
-            height: inherit;
-        }
-
         .book-grid {
             overflow: hidden;
         }
@@ -40,6 +32,14 @@
 
         .book:last-child {
             margin-right: 0;
+        }
+        html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+        .w3-sidebar {
+          z-index: 3;
+          width: 250px;
+          top: 43px;
+          bottom: 0;
+          height: inherit;
         }
     </style>
 </head>
@@ -90,10 +90,8 @@
             <a href="{% url 'profile' %}"
                class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">Hi, {{ user.first_name }} {{ user.last_name }}</a>
         {% else %}
-            <a href="databaseproject_emplogin.html"
-               class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">Faculty Login</a>
-            <a href="databaseproject_userlogin.html"
-               class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">User Login</a>
+            <a href="{% url 'login' %}"
+               class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white w3-right">Login</a>
         {% endif %}
     </div>
 </div>

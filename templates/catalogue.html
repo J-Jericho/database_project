@@ -1,27 +1,30 @@
 {% extends "base_nav.html" %}
+
+
 {% load static %}
 {% block content %}
-        <div class="w3-row w3-padding-64">
-            <div class="w3-twothird w3-container">
-                <div class="w3-row">
-                    <div class="w3-twothird w3-container">
-                        <h1 class="w3-text-teal">Our Catalogue</h1>
-                        <p>Here's just a few of the books we would recommend you read...</p>
-                        <div class="book-grid">
-                            {% for book in books %}
-                                <div class="book">
-                                    <img src="{{ book.image.url }}" alt="{{ book.title }}">
-                                    <h3>{{ book.title }}</h3>
-                                    <p>{{ book.author }}</p>
-                                    <p>Available Copies: {{ book.available_copies }}</p>
-                                    <a href="{% url 'checkout' book.id %}">Checkout Book</a>
-{#                                    <a href="{% url 'book_display' book.id %}">More Info</a>#}
-                                </div>
-                            {% endfor %}
-                        </div>
+    <div class="w3-row w3-padding-64">
+        <div class="w3-twothird w3-container">
+            <div class="w3-row">
+                <div class="w3-twothird w3-container">
+                    <h1 class="w3-text-teal">Our Catalogue</h1>
+                    <p>Here's just a few of the books we would recommend you read...</p>
+                    <div class="book-grid">
+                        {% for book in books %}
+                            <div class="book">
+                                <img src="{{ book.image.url }}" alt="{{ book.title }}">
+                                <h3>{{ book.title }}</h3>
+                                <p>{{ book.author }}</p>
+                                <p>Available Copies: {{ book.available_copies }}</p>
+                                <a href="{% url 'checkout' book.id %}">Checkout Book</a>
+                                {#                                    <a href="{% url 'book_display' book.id %}">More Info</a>#}
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
+
+    </div>
 {% endblock %}
 
