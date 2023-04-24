@@ -1,0 +1,10 @@
+# authentication/templates/authentication/login.html
+{% extends 'base_nav.html' %}
+{% block content %}
+    <p>{{ message }}</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" >Submit</button>
+    </form>
+{% endblock content %}
