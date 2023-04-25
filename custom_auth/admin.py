@@ -5,7 +5,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 
-from custom_auth.models import BaseUser
+from custom_auth.models import BaseUser, Student, Employee
 
 
 class UserCreationForm(forms.ModelForm):
@@ -55,12 +55,12 @@ class UserAdmin(BaseUserAdmin):
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
-    list_display = ('email', 'first_name', 'last_name', 'is_admin')
-    list_filter = ('is_admin',)
+    list_display = ('email', 'first_name', 'last_name', 'is_admin', 'is_student', 'is_staff', 'is_active',)
+    list_filter = ('is_admin', 'is_student', 'is_staff', 'is_active',)
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('first_name','last_name')}),
-        ('Permissions', {'fields': ('is_admin',)}),
+        ('Personal info', {'fields': ('first_name','last_name', )}),
+        ('Permissions', {'fields': ('is_admin', 'is_staff', 'is_student', 'is_active')}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
     # overrides get_fieldsets to use this attribute when creating a user.
@@ -74,9 +74,19 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('email',)
     filter_horizontal = ()
 
+class EmployeeAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Employee
+
+
+class StudentAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Student
 
 # Now register the new UserAdmin...
 admin.site.register(BaseUser, UserAdmin)
+admin.site.register(Employee, EmployeeAdmin)
+admin.site.register(Student, StudentAdmin)
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.
 admin.site.unregister(Group)

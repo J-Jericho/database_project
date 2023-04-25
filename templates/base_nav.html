@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        html, body, h1, h2, h3, h4, h5, h6 {
+        html, body, h1, h2, h3, h4, h5, h6, p {
             font-family: "Roboto", sans-serif;
         }
 
@@ -21,11 +21,11 @@
 
         .book {
             float: left;
-            width: 30%;
+            width: auto;
             margin-right: 3%;
             margin-bottom: 20px;
         }
-        .book img{
+        img{
             width: 150px;
             height: 150px;
         }
@@ -33,7 +33,7 @@
         .book:last-child {
             margin-right: 0;
         }
-        html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+        html,body,h1,h2,h3,h4,h5,h6, p {font-family: "Roboto", sans-serif;}
         .w3-sidebar {
           z-index: 3;
           width: 250px;
@@ -78,13 +78,11 @@
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1"
            href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-        <a class="w3-bar-item w3-button w3-hover-white w3-large w3-theme-l1"
-           href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-book"></i></a>
         <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
         <a href="{% url 'home' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Home</a>
         <a href="{% url 'catalogue' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Book
             Catalogue</a>
-        <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About/Contact
+        <a href="{% url 'contact' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About/Contact
             Us</a>
         {% if user.is_authenticated %}
             <a href="{% url 'profile' %}"

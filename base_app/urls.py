@@ -20,6 +20,7 @@ from base_app import views
 urlpatterns = [
     re_path(r'^available/', views.available_books, name='available'),
     re_path(r'^home/', views.home, name='home'),
+    re_path(r'^contact/', views.contact, name='contact'),
     re_path(r'^catalogue/', views.catalogue, name='catalogue'),
     re_path(r'^profile/', views.profile, name='profile'),
     re_path(r'^checkout/(?P<book_id>[0-9]+)/$', views.checkout_book, name='checkout'),

@@ -15,7 +15,6 @@ def login_page(request):
             )
             if user is not None:
                 login(request, user)
-                message = f'Hello {user.first_name}! You have been logged in'
                 return redirect('profile')
             else:
                 message = 'Login failed!'
